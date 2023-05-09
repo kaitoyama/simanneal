@@ -153,7 +153,7 @@ class Annealer(object):
                   .format(Temp=T,
                           Energy=E,
                           Elapsed=time_string(elapsed)),
-                  file=sys.stderr, end="")
+                  file=sys.stderr, end="", flush=True)
             sys.stderr.flush()
         else:
             remain = (self.steps - step) * (elapsed / step)
@@ -164,7 +164,7 @@ class Annealer(object):
                           Improve=improvement,
                           Elapsed=time_string(elapsed),
                           Remaining=time_string(remain)),
-                  file=sys.stderr, end="")
+                  file=sys.stderr, end="", flush=True)
             sys.stderr.flush()
 
     def anneal(self):
